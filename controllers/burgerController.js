@@ -1,50 +1,42 @@
 var express = require("express");
-
 var router = express.Router();
+var burger = require("../models/burger.js");
 
-// Import the model (cat.js) to use its database functions.
-var burgers = require("../models/burger.js");
+router.get("/", function(req,res) {
 
-// Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-  burgers.all(function(data) {
+  burger.allBurgers(function(data) {
     var hbsObject = {
-      cats: data
-    };
+      burgers: data
+    }
     console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
 
+//show burgers in db
 router.post("/", function(req, res) {
-  burgers.create([
-    "name", "sleepy"
-  ], [
-    req.body.name, req.body.sleepy
-  ], function() {
-    res.redirect("/");
-  });
+
+  burger.createBurger([
+    "burger_name", "devoured"
+    ], [
+      req.body.name, req.body.ate
+    ], function() {
+      res.redirect("/");
+    });
 });
 
-router.put("/:id", function(req, res) {
+//update a burger to eaten or not
+router.put("/:id", function(req,res) {
   var condition = "id = " + req.params.id;
 
-  console.log("condition", condition);
+  console.log("condition " + condition);
 
-  burgers.update({
-    sleepy: req.body.sleepy
+  burger.updateBurger({
+    devoured: req.body.ate
   }, condition, function() {
     res.redirect("/");
   });
 });
 
-router.delete("/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
-
-  burgers.delete(condition, function() {
-    res.redirect("/");
-  });
-});
-
-// Export routes for server.js to use.
+//router export for server.js
 module.exports = router;
