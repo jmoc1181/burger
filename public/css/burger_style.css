@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet');
+
+
+.center {
+	margin: 0px;
+	width:100%;
+	text-align: center;
+}
+
+h1 {
+	margin: 0 auto;
+	color: black;
+	font-family: 'Baloo Bhaina', cursive;
+	font-size: 50px;
+	background-position: center;
+
+}
+
+
+
+h2 {
+	font-family: 'Baloo Bhaina', cursive;
+	color: #F33;
+   font-size: 30px;
+   margin-bottom: 0px;
+
+}
+
+h3 {
+	margin-top: 0px;
+	font-family: arial;
+	font-weight: normal;
+	color: #444;
+	font-size: 14px;
+	font-style: italic;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 0px;
+}
+
+.btn {
+	background-color: #559CAD; 
+    border: none;
+    color: white;
+    padding: 15px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 2px;
+}
+
+#uneaten{
+	text-align: center;
+}
+
+#eaten {
+	text-align: center;
+}
+
+#add {
+	clear: both;
+	padding-top: 20px;
+}
+
+label {
+	font-size: 16px;
+	font-family: arial;
+}
+
+.add {
+	font-family: arial;
+}
+
+#burger-name {
+	letter-spacing: .1em;
+	color: #555;
+}
+
+#eatenTitle {
+	margin-top: 10px;
+	font-style: italic;
+	letter-spacing: .1em;
+	color: #555;
+}
+
+.radio {
+	margin: 8px;
+}
